@@ -1,0 +1,153 @@
+/* Basic sample */
+
+body{
+	overflow:hidden;
+	background-color:#fcfcfc;
+	margin:0;
+	padding:0;
+}
+
+.flipbook-viewport{
+	width:100%;
+	height: 510px;
+	position: relative;
+}
+
+.flipbook-viewport .designer{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.flipbook-viewport .flipbook{
+	overflow-y: hidden;
+}
+
+.flipbook-viewport .page{
+	width: 1200px;
+	height: 400px;
+	background-color: #f9f9f9;
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+
+.flipbook .page{
+	-webkit-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-moz-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-ms-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	-o-box-shadow:0 0 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 20px rgba(0,0,0,0.2);
+}
+
+.flipbook-viewport .page img{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin:0;
+}
+
+.flipbook-viewport .shadow{
+	-webkit-transition: -webkit-box-shadow 0.5s;
+	-moz-transition: -moz-box-shadow 0.5s;
+	-o-transition: -webkit-box-shadow 0.5s;
+	-ms-transition: -ms-box-shadow 0.5s;
+
+	-webkit-box-shadow:0 0 20px #ccc;
+	-moz-box-shadow:0 0 20px #ccc;
+	-o-box-shadow:0 0 20px #ccc;
+	-ms-box-shadow:0 0 20px #ccc;
+	box-shadow:0 0 20px #ccc;
+}
+.designer .des_top {
+    width: 100%;
+    line-height: 56px;
+    text-align: center;
+    padding-top: 14px;
+    font-size: 24px;
+    font-weight: 100;
+    color: #656565;
+}
+.designer .des_top {
+    width: 100%;
+    line-height: 56px;
+    text-align: center;
+    padding-top: 14px;
+    font-size: 24px;
+    font-weight: 100;
+    color: #656565;
+}
+.des_photo {
+    clear: both;
+}
+
+.des_photo .des_photo_left {
+    width: 340px;
+    height: 400px;
+    float: left;
+    background-size: 100% 100%;
+}
+.des_photo .des_photo_right {
+    width: 858px;
+    height: 400px;
+    float: right;
+}
+.des_photo .desiner_top {
+    width: 100%;
+    padding: 40px 0 0 40px;
+    font-size: 18px;
+    color: #000;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.des_photo .des_center {
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+    padding: 10px 40px 0 40px;
+    color: #999;
+    height: 195px;
+    overflow-y: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.des_photo .des_bottom {
+    width: 100%;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 60px;
+    text-align: right;
+    padding-right: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*上一页*/
+.previousPage, .nextPage {
+  width: 12px;
+  height: 22px;
+  position: absolute;
+  z-index: 999999;
+  background: url(../images/prevNext.png) no-repeat;
+  cursor: pointer;
+}
+.previousPage {
+    background-position: left top;
+    bottom: 8px;
+  left: 48%;
+}
+/*下一页*/
+.nextPage {
+  bottom: 8px;
+  right: 48%;
+  background-position: right top;
+}

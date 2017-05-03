@@ -1,0 +1,127 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <meta charset="utf-8"> <!--<![endif]-->
+<head>
+<meta name="viewport" content="width = 1050, user-scalable = no" />
+<script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
+</head>
+<body>
+
+<div class="flipbook-viewport">
+	<div class="designer">
+	    <div class="des_top">-极致设计-</div>
+		<div class="flipbook" id="flipbook">
+		    <div class="des_photo">
+		    	<div class="des_photo_left" style="background-image:url(images/1.jpg)"></div>
+		    	<div class="des_photo_right">
+			    	<div class="desiner_top">设计师简介：</div>
+			    	<div class="des_center">虽然每个人的审美观都有所不同，不过时尚漂亮设计的则是每个人都喜欢的</div>
+			    	<div class="des_bottom">—Davi</div>
+		    	</div>
+		    </div>
+			<div class="des_photo">
+		    	<div class="des_photo_left" style="background-image:url(images/2.jpg)"></div>
+		    	<div class="des_photo_right">
+			    	<div class="desiner_top">设计师简介：</div>
+			    	<div class="des_center">虽然每个人的审美观都有所不同，不过时尚漂亮设计的则是每个人都喜欢的</div>
+			    	<div class="des_bottom">—Davi</div>
+		    	</div>
+		    </div>
+		    <div class="des_photo">
+		    	<div class="des_photo_left" style="background-image:url(images/3.jpg)"></div>
+		    	<div class="des_photo_right">
+			    	<div class="desiner_top">设计师简介：</div>
+			    	<div class="des_center">虽然每个人的审美观都有所不同，不过时尚漂亮设计的则是每个人都喜欢的</div>
+			    	<div class="des_bottom">—Davi</div>
+		    	</div>
+		    </div>
+		    <div class="des_photo">
+		    	<div class="des_photo_left" style="background-image:url(images/4.jpg)"></div>
+		    	<div class="des_photo_right">
+			    	<div class="desiner_top">设计师简介：</div>
+			    	<div class="des_center">虽然每个人的审美观都有所不同，不过时尚漂亮设计的则是每个人都喜欢的</div>
+			    	<div class="des_bottom">—Davi</div>
+		    	</div>
+		    </div>
+            <div class="des_photo">
+                <div class="des_photo_left" style="background-image:url(images/5.jpg)"></div>
+                <div class="des_photo_right">
+                    <div class="desiner_top">设计师简介：</div>
+                    <div class="des_center">虽然每个人的审美观都有所不同，不过时尚漂亮设计的则是每个人都喜欢的</div>
+                    <div class="des_bottom">—Davi</div>
+                </div>
+            </div>
+		</div>
+	</div>
+	<div class="previousPage"></div>
+    <div class="nextPage"></div>
+</div>
+
+
+<script type="text/javascript">
+
+function loadApp() {
+
+	// Create the flipbook
+
+	$("#flipbook").turn({
+        width: 1200,
+        height: 400,
+        elevation: 50,
+        gradients: true,
+        autoCenter: true,
+        display: 'single',//显示单个
+        when: {
+            turning: function (e, page, view) {
+            	var total = $("#flipbook").turn("pages");//总页数
+                if (page == total) {
+                    $(".nextPage").css("display", "none");
+                } else {
+                    $(".nextPage").css("display", "block");
+                }
+            },
+            turned: function (e, page, view) {
+                if (page == 1) {
+                    $(".previousPage").css("display", "none");
+                } else {
+                    $(".previousPage").css("display", "block");
+                }
+            }
+        }
+    });
+
+    $(".previousPage").bind("click", function () {
+        var pageCount = $("#flipbook").turn("pages");//总页数
+        var currentPage = $("#flipbook").turn("page");//当前页
+        if (currentPage >= 2) {
+            $("#flipbook").turn('page', currentPage - 1);
+        }
+    });
+    // 下一页
+    $(".nextPage").bind("click", function () {
+        var pageCount = $("#flipbook").turn("pages");//总页数
+        var currentPage = $("#flipbook").turn("page");//当前页
+        if (currentPage < pageCount) {
+            $("#flipbook").turn('page', currentPage + 1);
+        }
+    });
+}
+
+// Load the HTML4 version if there's not CSS transform
+
+yepnope({
+	test : Modernizr.csstransforms,
+	yep: ['../../lib/turn.js'],
+	nope: ['../../lib/turn.html4.min.js'],
+	both: ['css/demo.css'],
+	complete: loadApp
+});
+
+</script>
+
+</body>
+</html>
