@@ -6,8 +6,8 @@
 <!--[if !IE]><!--> <meta charset="utf-8"> <!--<![endif]-->
 <head>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
-<script type="text/javascript" src="../../extras/jquery.min.1.7.js"></script>
-<script type="text/javascript" src="../../extras/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
+<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
 </head>
 <body>
 
@@ -115,8 +115,8 @@ function loadApp() {
 
 yepnope({
 	test : Modernizr.csstransforms,
-	yep: ['../../lib/turn.js'],
-	nope: ['../../lib/turn.html4.min.js'],
+	yep: ['js/turn.js'],
+	nope: ['js/turn.html4.min.js'],
 	both: ['css/demo.css'],
 	complete: loadApp
 });
